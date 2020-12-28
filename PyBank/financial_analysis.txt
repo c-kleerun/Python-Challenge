@@ -1,1 +1,1 @@
-Financial Analysis
+Financial Analysis Results---------------------Total Months: 86Net Total Profit/Loss: 38382578Average Change: -2315.12Greatest Increase in Profits: ('Sep-2013', -2196167)Greatest Decrease in Profits: ('Feb-2012', 1926159)

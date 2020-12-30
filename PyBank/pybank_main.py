@@ -34,18 +34,14 @@ with open(path) as bank:
             min_decrease[1] = change
             #  // min_decrease = ["Jan-2010", 86000]
             min_decrease[0] = row[0]
-    
 
     average_change = sum(change_list[1:])/(len(change_list)-1)
-
 
     # print(total)
     # print(row_count)
     # print (round(average_change, 2))
     # print(min_decrease[0], min_decrease[1])
     # print(max_increase[0], max_increase[1])
-    
-    
     
 
 print('Financial Analysis')
@@ -56,7 +52,7 @@ print(f'Average Change: {round(average_change, 2)}')
 print(f'Greatest Increase in Profits: {min_decrease[0], min_decrease[1]}')
 print(f'Greatest Decrease in Profits: {max_increase[0], max_increase[1]}')
 
-with open('financial_analysis.txt', 'w') as txt:
+with open(os.path.join('Analysis/financial_analysis.txt'), 'w') as txt:
     txt.writelines('Financial Analysis Results\n')
     txt.writelines('---------------------\n')
     txt.writelines(f'Total Months: {row_count}\n')

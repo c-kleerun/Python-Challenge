@@ -19,25 +19,13 @@ with open(path) as election:
         votes[row[2]] = votes[row[2]]+1 
         # votes[khan]=1 +1
         
-    # for x in votes:    
-        
+    # for x in votes: 
+    #     vote_percent = votes[1]/vote_count
+    #     print(vote_percent)
 
-    # print(names)
+    print(names)
     print(votes)
-
-
-
-# def total_votes (name, percent):
-#         if x in name:
-#             return name[percent]
-
-#     votes['_found'] = total_votes
-
-# k = total_votes["Khan"]
-# c = total_votes["Correy"]
-# l = total_votes["Li"]
-# o = total_votes["O'Tooley"]
-
+    
 
 print('Election Results')
 print('--------------------')

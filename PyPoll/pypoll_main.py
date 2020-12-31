@@ -8,10 +8,8 @@ with open(path) as election:
     header = next(csvreader)
     
     vote_count = 0
-    i = 0
     names = []
     votes = {}
-    vote_percent = {}
     for row in csvreader:
         vote_count = vote_count+1
         if row[2] not in names:
@@ -23,10 +21,10 @@ with open(path) as election:
         
     for k,v in votes.items():
         pct = v * 100/vote_count
-        if k in votes:
-            votes[k].append(pct)
+        # if k in votes:
+        #     votes[k].append(pct)
         
-        # print(k, (round(pct)))
+        print(k, (round(pct)))
 
     # print(names)
     # print(votes)

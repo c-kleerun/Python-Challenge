@@ -8,8 +8,11 @@ with open(path) as election:
     header = next(csvreader)
     
     vote_count = 0
+    win = 0
     names = []
     votes = {}
+    vote_percent= {}
+    final_count = {}
     for row in csvreader:
         vote_count = vote_count+1
         if row[2] not in names:
@@ -17,14 +20,15 @@ with open(path) as election:
             votes[row[2]] = 0
 
         votes[row[2]] = votes[row[2]]+1 
+    print(votes)
         # votes[khan]=1 +1
-        
-    for k,v in votes.items():
-        pct = v * 100/vote_count
-        # if k in votes:
-        #     votes[k].append(pct)
-        
-        print(k, (round(pct)))
+    
+    for k, v in votes.items():
+        vote_percent[k] =  "{:.2%}".format(v/vote_count)
+        # print(vote_percent)
+
+    final_count = {key:(vote_percent[key], votes[key]) for key in votes}
+    print(final_count)
 
     # print(names)
     # print(votes)
@@ -34,22 +38,23 @@ print('Election Results')
 print('--------------------')
 print(f'Total Votes: {vote_count}')
 print('---------------------')
-print(f'Khan: {votes.get("Khan")}')
-# print(f'Correy: {(round(pct, 2))}%, {votes.get("Correy")}')
-# print(f'Li: {(round(pct, 2))}%, {votes.get("Li")}')
-# print("O'Tooley:" + {(round(pct,2))} + {votes.get("O'Tooley")})
-    # Correct formatting? 
-    # There needs to be both single and double quotes to get this to work...
+print(f'Khan: {final_count.get("Khan")}')
+print(f'Correy: {final_count.get("Correy")}')
+print(f'Li: {final_count.get("Li")}')
+print(f'''O'Tooley: {final_count.get("O'Tooley")}''')
 print('---------------------')
-# print('Winner: {}')
-# print('---------------------')
+print(f'Winner: {win}')
+print('---------------------')
 
 # with open(os.path.join('Analysis/election_results.txt'), 'w') as txt:
 #     txt.writelines('Election Results\n')
 #     txt.writelines('------------------\n')
 #     txt.writelines(f'Total Votes: {vote_count}\n')
 #     txt.writelines('-------------------------\n')
-#     txt.writelines()
-#     txt.writelines()
-#     txt.writelines()
-#     txt.writelines()
+#     txt.writelines(f'Khan: {final_count.get("Khan")}\\n')
+#     txt.writelines(f'Correy: {final_count.get("Correy")}\n')
+#     txt.writelines(f'Li: {final_count.get("Li")}\n')
+#     txt.writelines(f'''O'Tooley: {final_count.get("O'Tooley")}\n''')
+    # txt.writelines('---------------------\n')
+    # txt.writelines(f'Winner: {win}\n')
+    # txt.writelines('---------------------\n')

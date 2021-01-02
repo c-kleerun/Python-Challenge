@@ -24,25 +24,14 @@ with open(path) as bank:
         previous = int(row[1])
 
         if change > max_increase[1]: 
-            #  if 86000 >0:
             max_increase[1] = change 
-            #  max_increase = ["Jan-2010", 86000]
             max_increase[0] = row[0]
         
         if change < min_decrease[1]:
-            #  if 86000 < 99999:
             min_decrease[1] = change
-            #  min_decrease = ["Jan-2010", 86000]
             min_decrease[0] = row[0]
 
     average_change = sum(change_list[1:])/(len(change_list)-1)
-
-    # print(row_count)
-    # print(total)
-    # print (round(average_change, 2))
-    # print(min_decrease[0], min_decrease[1])
-    # print(max_increase[0], max_increase[1])
-    
 
 print('Financial Analysis')
 print('---------------------')

@@ -6,7 +6,7 @@ Python code written to analyze financial records for a company. The script analy
   * The greatest increase in profits (date and amount) over the entire period
   * The greatest decrease in losses (date and amount) over the entire period
 
-When run, the script writes the information to a .txt file, named "financial_analysis." It can be found in the PyBank/Analysis folder in this repo.
+When run, this script writes the information to a .txt file, named "financial_analysis." It can be found in the PyBank/Analysis folder in this repo.
 
 This challenge also has code to help determine vote counts for a small, rural town. The script analyzes the given data to calculate:
   * The total number of votes cast
